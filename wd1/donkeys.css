@@ -1,0 +1,350 @@
+@font-face {
+    font-family: "Museo Sans 500"; src: url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.eot"); src: url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.woff") format("woff"), url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/16697a764b01cdcc691b05f001046bc3.svg#Museo Sans 500") format("svg");
+}
+@viewport{width: device-width;}
+
+html{
+    --main-color: #37b4ca;
+    --mainby-color:rgb(247, 212, 99);
+    --highlightable-color:rgb(213, 105, 86);
+    --highlightable-off-color:rgb(255, 130, 47);
+    --highlighted-color:rgb(237, 165, 57);
+    --text-color:black;
+    --underline-color:red;
+    
+    scroll-padding: 22%;
+    scroll-behavior: smooth;
+}
+@keyframes img_cycle{
+            
+            /*      fix background position     */
+
+    0%      {background:url("donkey-6.jpg") no-repeat;background-position: center;}
+            
+    
+    25%     {background:url("donkey-3.jpg") no-repeat;background-position: center;}
+    50%     {background:url("donkey-4.jpg") no-repeat;background-position: center;}
+    75%    {background:url("donkey-5.jpg") no-repeat;background-position: center;}
+
+    100%    {background:url("donkey-6.jpg") no-repeat;background-position: center;}
+}
+
+@keyframes Gimg {
+    0%  {transform: rotate(30deg);
+        transform: scale(1.1);
+        background-color: var(--highlighted-color);}
+}
+
+
+body{
+    background-image: url("background-tile.jpg");
+    background-color: cornflowerblue;
+    font-family: museosans,Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+    
+}
+
+
+
+
+
+                    /*               header                   */
+
+
+header img{
+    float: left;
+    width: 8%;
+    min-height: 5em;
+    min-width: 4em;
+    /*
+    border-radius: 1em;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    */
+}
+header{
+    width: 90%;
+    height: 20%;
+    background-color: var(--main-color);
+    margin:  0 auto;
+    margin-bottom: 3%;
+    
+    
+
+}
+
+header section { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: stretch;
+    background-color: var(--highlightable-color);
+
+    margin:0 auto;
+    width: 99.5%;
+    border-style: solid;
+    border-width: 1%;
+    border-color: black;
+}
+
+header a{
+    padding: 1em;
+    padding-left: 9%;
+    padding-right: 9%;
+
+    min-height: fit-content;
+
+}
+
+/* check #current page for damage */
+#current-page{
+    background-color: var(--mainby-color);
+
+
+}
+header h1{
+    background-color: var(--mainby-color);
+    height: 50%;
+    max-height: 50%;
+    min-height: 30%;
+    font-size: 6.5vh; /*credit for vw: w3 schools https://www.w3schools.com/howto/howto_css_responsive_text.asp*/
+    text-align: center; 
+}
+
+
+
+
+
+
+                    /*                 changing for screen size                      */ 
+
+
+
+@media screen and (max-width:650px) {
+
+    main{
+        margin: 0 auto;
+        width: 95%;
+    }
+    nav{
+        margin: 0 auto;
+        width: 80%;
+    }
+    header a{
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+    header{
+        padding-bottom: 4%;
+    }
+}
+
+@media screen and (min-width:651px) {
+    nav{
+        float:left;
+        max-width: 18%;
+        position: fixed;
+        top: 30%;
+
+    }
+    
+    main{
+        float: right;
+        width: 77%;
+    }
+    header{
+        position: sticky;
+        top: 0;
+        
+    }
+}
+
+
+
+
+
+                    /*                     nav                   */
+
+
+                  
+
+nav{
+    background-color: var(--mainby-color);
+    padding:0.5%;
+    border-radius: 0.5em;
+
+    text-align: center;
+}
+
+nav a{
+    display: block;
+    text-align: center;
+    background-color: var(--highlightable-color);
+    padding: 0.3em;
+
+}
+
+nav p{
+    background-color: var(--main-color);
+    padding: 0.4em;
+}
+
+/*add alternating colours to nav if not hoverable*/
+
+
+
+
+@media (hover:hover){
+    .hoverable:hover, #current-page:hover{
+        background-color: var(--highlighted-color);
+        transition: background-color 0.5s;
+        
+    }
+    
+}
+
+@media (hover:none){
+    p~.hoverable:nth-child(odd){
+        background-color: var(--highlightable-off-color);
+    }
+}
+
+
+
+                        /*                main           */
+
+
+main{
+    background-color: var(--main-color);
+
+    padding: 1%;
+    padding-bottom: 5%;
+    border-radius: 1em;
+}
+
+h2+img{
+    float: left;
+    max-width: 30%;
+    border-radius: 1em;
+    padding: 0.5em;
+    
+}
+#cycle img{
+    display: block;
+    margin: 0 auto;
+    background-position: center;
+    height: 40%;
+    max-width: 100%;
+    animation-name: img_cycle;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+article:nth-child(odd) img{
+    float: right;
+}
+
+
+
+
+
+
+
+
+main p{
+    background-color: var(--mainby-color);
+    padding:0.5em;
+    border-radius: 0.5em;
+}
+
+main h2{
+    background-color: var(--mainby-color);
+    border-bottom-style: solid;
+    border-width: 0.3em;
+    border-color: var(--underline-color);
+    border-radius: 0.5em;
+    text-align: center;
+
+}
+main ul{
+    background-color: var(--mainby-color);
+    border-radius: 0.5em;
+}
+main a{
+    text-decoration: underline;
+}
+
+
+                  /*                 gallery               */
+
+h2+section{
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+   
+    text-align: center;
+
+    
+}
+
+@media screen and (max-width: 650px){
+    a+picture{
+        max-height: 30%;
+    }
+}
+
+h2+section img{
+    max-width: 45%;
+    padding:1em;
+    background-color: var(--mainby-color);
+    border-radius: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+                        /*             footer             */
+
+footer{
+    background-color: var(--mainby-color);
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+    width: 93%;
+    border-style: solid;
+    border-width: 0.4em;
+    border-bottom: black;
+    max-height: 8%;
+    text-align: center;
+    padding-right: 2em;
+    padding-left: 2em;
+    font-size: 1vw;
+    border-radius: 0.5em;
+
+    
+}
+footer a{
+    text-decoration: underline;
+}
+
+
+
+    
+
